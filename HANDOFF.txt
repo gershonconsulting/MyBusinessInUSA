@@ -1,0 +1,98 @@
+================================================================
+HANDOFF.txt  -  MyBusinessInUSA
+Written by: Claude (nightly run) - token-limit handoff protocol
+Date: 2026-10-22 (night of 2026-10-21 ET)
+Reason: every repo must carry a handoff so another AI can continue
+        from this file alone.
+================================================================
+
+0. WHO YOU ARE READING THIS
+----------------------------------------------------------------
+You are an AI assistant taking over this repository for Olivier Attia,
+founder / CTO of Gershon Consulting LLC.
+
+Read the MASTER HANDOFF first:
+  github.com/gershonconsulting/memory -> HANDOFF.txt
+
+CRITICAL OPERATING RULES:
+  * Olivier does NOT use a terminal, CLI, git or PowerShell. Never give
+    him commands or 'just run this' steps.
+  * He does NOT upload/download/move files. YOU find the route.
+  * End every actionable reply with:
+      GREEN CHECK = ready for him to test (+ link)
+      RED CROSS   = something still to do (+ exactly 3 options he can
+                    action - never a CLI step)
+  * Executors: Ariel = code/repo work. Charles = Chrome extension and web
+    admin panels (Cloudflare, GitHub settings, DNS, publishing).
+
+1. WHAT THIS REPO IS
+----------------------------------------------------------------
+Product / site name : MyBusinessInUSA - US market entry lead-gen hub
+Live URL            : https://mybusinessinusa.com (per master index; no CNAME
+                      file in repo; live status unverified)
+What it does        : Tiny static site: index.html (header, hero, features,
+                      footer - about 5.7 KB), robots.txt, sitemap.xml and a
+                      multilingual /articles/ hub (EN/FR/ES/DE/IT/PT) whose
+                      articles end with a Gershon Consulting call-to-action.
+Who uses it         : Prospective clients considering US market entry.
+
+2. STACK AND DEPLOY ROUTE
+----------------------------------------------------------------
+Language / framework: Plain HTML, no build step, no package.json.
+Hosting             : Hostinger (shared).
+DNS / registrar     : Tierra.net; Cloudflare.
+Deploy method       : GitHub Actions FTP -> Hostinger on push to main, via
+                      .github/workflows/deploy.yml ('Deploy MyBusinessInUSA
+                      to Hostinger', SamKirkland FTP-Deploy-Action, plus
+                      workflow_dispatch). Excludes .git*, .github, *.md, *.xlsx.
+Default branch      : main
+How to ship a change: Branch, PR, merge to main -> auto deploy. Verify in the
+                      Actions tab. Articles: follow PUBLISHING.md.
+Secrets / env vars  : GitHub Actions secrets (names only): FTP_SERVER,
+                      FTP_USERNAME, FTP_PASSWORD, FTP_SERVER_DIR. Values in
+                      1Password / GitHub.
+
+3. RECENTLY DONE  [DONE]
+----------------------------------------------------------------
+- 2026-06-12 index.html created; FTP deploy workflow added (06-12, deleted
+  and re-added 06-13).
+- 2026-10-11 Multilingual articles hub, sitemap, robots; first EN article
+  'The best first 90 days of a US market entry'.
+
+4. PENDING  [TODO]
+----------------------------------------------------------------
+- Build out the homepage beyond the stub.
+- More articles/translations (only one EN article seen).
+- Confirm the last workflow run succeeded (unverified - Actions history not
+  read).
+
+5. MISSING / NOT BUILT YET
+----------------------------------------------------------------
+- No README, no CNAME, no analytics, no lead form in the repo.
+
+6. KNOWN BUGS / NEEDS FIXING
+----------------------------------------------------------------
+- None reported. Not tested live (unverified).
+
+7. NEXT ACTION - START HERE
+----------------------------------------------------------------
+The single most valuable next step is:
+  -> Check the latest Actions run is green and https://mybusinessinusa.com
+     serves the new /articles/ hub; if not, ask Charles to verify the four
+     FTP secrets.
+
+8. GOTCHAS / HARD-WON LESSONS
+----------------------------------------------------------------
+- Deploy uses FTP and EXCLUDES *.md, so PUBLISHING.md is never uploaded.
+- FTP_SERVER_DIR needs a trailing slash.
+- Sibling outlets share the article template (uslaunchhub, AmericanInFrance,
+  AmericanAbroad, gershonconsulting-org, etc.).
+
+9. CONTACT / ESCALATION
+----------------------------------------------------------------
+Olivier Attia - oattia@gmail.com
+Report mailbox - report@gershonconsulting.com
+
+================================================================
+END OF HANDOFF
+================================================================
